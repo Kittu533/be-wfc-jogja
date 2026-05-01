@@ -1,0 +1,68 @@
+{
+  "33690f1ffcaf5fecab81aa69fd1b7654ee00a3b002bfd75dd3f9c70e6fd8282c": {
+    "query": "cafe wfc jogja",
+    "limit": 10,
+    "file": "scrape_33690f1ffcaf.json",
+    "scraped_at": "2026-04-26T14:23:49.108935+00:00"
+  },
+  "f5d1dffbe2fb295ce70f0c49d23b63f6ac99b8a40b7f9d6ed951b253c48fcc7a": {
+    "query": "cafe jogja",
+    "limit": 10,
+    "file": "scrape_f5d1dffbe2fb.json",
+    "scraped_at": "2026-04-26T14:26:55.440776+00:00"
+  },
+  "e08a207bb03e99300709ee41885ee2d3338f2aa54041f3c521c2f95129cb292b": {
+    "query": "cafe wfc jogja",
+    "limit": 20,
+    "file": "scrape_e08a207bb03e.json",
+    "scraped_at": "2026-04-26T16:13:10.191149+00:00"
+  },
+  "4ed2ffac2ce60e8a58e978d4f5dc7ca2cee58f9d6da74f3321e6ee381eb28d56": {
+    "query": "kafe",
+    "limit": 20,
+    "file": "scrape_4ed2ffac2ce6.json",
+    "scraped_at": "2026-04-26T16:14:00.341428+00:00"
+  },
+  "182829fe376f1300790ecb7ea53de70d2fcf39caccbd670073ca18876a9b1eeb": {
+    "query": "caffe",
+    "limit": 20,
+    "file": "scrape_182829fe376f.json",
+    "scraped_at": "2026-04-26T17:08:37.589032+00:00"
+  },
+  "37db59b03cc15c096582c0ede6cec8c185ac3f5358d2a1136010bfc0b84e5038": {
+    "query": "kopi",
+    "limit": 20,
+    "file": "scrape_37db59b03cc1.json",
+    "scraped_at": "2026-04-26T17:11:09.157818+00:00"
+  },
+  "092a6421c8c5e079cfcabb33acf6ce3c213fcff2cc1206259a21a95928259162": {
+    "query": "kopi jogja",
+    "limit": 20,
+    "file": "scrape_092a6421c8c5.json",
+    "scraped_at": "2026-04-26T17:17:36.788582+00:00"
+  },
+  "3e73449dbdf111fd4664632b0a9521ac24bcfca03334fa1db28c86a7c7dc7d37": {
+    "query": "kopi murah jogja",
+    "limit": 20,
+    "file": "scrape_3e73449dbdf1.json",
+    "scraped_at": "2026-04-26T17:17:56.097403+00:00"
+  },
+  "0fe777d788b9a05efdc9bc6f6a00a0c18980a6fb1aa24f908d81dd2aac8b922c": {
+    "query": "kopi wifi jogja",
+    "limit": 20,
+    "file": "scrape_0fe777d788b9.json",
+    "scraped_at": "2026-04-26T17:19:07.908076+00:00"
+  },
+  "900378b9c2157012392846354498a7d7267130ae83b281b4d33d5b6d3387ef4d": {
+    "query": "kopi colokan jogja",
+    "limit": 20,
+    "file": "scrape_900378b9c215.json",
+    "scraped_at": "2026-04-26T17:20:19.583085+00:00"
+  },
+  "421f1d0a2e08f0c577fedebe6e4fca85b465df0f88023aec4fc6b45b664c4d15": {
+    "query": "kopi 24 jam jogja",
+    "limit": 20,
+    "file": "scrape_421f1d0a2e08.json",
+    "scraped_at": "2026-04-26T17:21:36.638715+00:00"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "query": "kopi murah jogja",
+  "source": "google_maps_html",
+  "source_url": "https://www.google.com/maps/search/kopi+murah+jogja",
+  "limit": 20,
+  "scraped_at": "2026-04-26T17:17:56.097403+00:00",
+  "places": [
+    {
+      "name": "Mato Kopi",
+      "maps_url": "https://www.google.com/maps/place/Mato+Kopi/data=!4m7!3m6!1s0x2e7a59bc2c42f137:0x878bc3ff348acccd!8m2!3d-7.7681419!4d110.3993936!16s%2Fg%2F11b6hyg3rj!19sChIJN_FCLLxZei4RzcyKNP_Di4c?authuser=0&hl=id&rclk=1",
+      "place_id": "0x2e7a59bc2c42f137:0x878bc3ff348acccd",
+      "address": "Jl. Selokan Mataram Kedai terbuka dengan camilan & kopi Buka 24 jam",
+      "lat": "-7.7681419",
+      "lng": "110.3993936",
+      "category": "Kafe",
+      "price_level": "",
+      "rating": "4.4",
+      "review_count": "",
+      "is_open": "open",
+      "closes_at": "",
+      "opens_at": "",
+      "image_urls": [
+        "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEo35uKli1RGRXQ-B7fohmuXXM4ps26L4BRYfp_F-oOHJQaYrCf_b1CK27wGyHOjdWD_PpVqvc-EoeCrX3e6sbGz-cfLEK5dB1eC56kx6aI4Jr_3yUFUAcVcb_4mikznr5nY9dxtg=w1200-h900-k-no",
+        "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHmwAxwkcKlf9qfGP883pLWlK1niJTyf3GMiO_33RXIrNE4WK4um4eF1gaP8-_p2e3wIsEdIK2eREf7PLiMuUGRoLr6OoSEnKrPGJa4x-qs0J6vkhxr3aRbJwRyu7Vfr_JKbZdKjUyID5I=w1200-h900-k-no",
+        "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE4oKsY9s8OkaHT_VOpSGoYL76I4Wn7Za-Ag-5SblV7y4eDI_zyIWr5boyJanWrXlByeht9-L14DwUGe2eFcmdsSlbKEt1aG9B1nifD1VByVC55yvg89dXlDD9E0DhDxnoDnG23=w1200-h900-k-no",
+        "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFcKvyLck0xmP3tKsXcY0KAFXpIs8LF38rewRuLzKjoi-z8MqfYaAkzhRDGmsE8itVxnRxyUdIym7HrwZQM3PTfdNA6sWyTlcGiVAImj-yr9G0FpyIynP2hIu2A2VcmkNLcFcJyxg=w1200-h900-k-no",
+        "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFC_qcrUMWCAK8HJxx2HYVVUXcuKWebJJwZMXeaqO5d4vanJB8CGpSA_BeHL-atPYxLAfUp98oXbK2I-cDNpPb-63cFmtH_tjxnSf8qdAODuwJYvQSdKXvf8swTg37myzH7037HGL9o3ZWG=w1200-h900-k-no",
+        "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHc8NOOb9SHMcelAosN_9fVFRGkIzQbs4Ir9-9UXEejfHN_r__06NqcAjQKCIjAZIQwnGrGW5-rUhPfO2x448Bt2POtruY6clwkubWJq_7T5ei5KypQn2MdHsuV_JXBf8Z17QtBGQ=w1200-h900-k-no",
+        "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFv6rJ6z7ALVvbK77cipcvQNwccJkQ1jg1TF6FHKuG9zHRlxOljLAdB45v5znVJ_LiZcRxcf0IaeUHYAQplZW7MwdWIEENktetTXcTd5E02jerAR6s1_-DW0PRpBut9oLTq_VuQiQ=w1200-h900-k-no",
+        "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFrs7YnIQGGVwRAK4QVWCYfVv4tuutYHFR1RYm1Ld11OTd8BCdA6usYfQvUMprm6JcM986o1I_rQJIrwaTv09ag3UsJ3ZeQtFn9uaQrpA6yzfMdPjJ8qAm1icd-LiQvo-SOUZeWjyvv_nP1=w1200-h900-k-no",
+        "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFMCFEHQCqIepc0NkbFU5aSQfQ2Ms6zpQyMRTSomfoJ4MGUPge9swUi__UoqKsfP6ua3RQTL7LmqvYaFPQ_P48RpEreTaJ3nISqt4AxCzTvzpMT19bCZtldhzkYW_heWJEV7vr0=w1200-h900-k-no",
+        "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFqwdKyRsU8PB99TZWz5_lgLlj8QrD6wI5a0o2TcPLmqlgb168phoMdVn1iMKvQRhjTm7FSQoJeiWGzCVPWFPM002Zp0MLIzOLzqABbR2f7BnTHYamdU-2rVPz-UxlL_Y9Yihd7wQ=w1200-h900-k-no"
+      ],
+      "text_preview": "Mato Kopi 4,4 Kafe ·  · Jl. Selokan Mataram Kedai terbuka dengan camilan & kopi Buka 24 jam",
+      "source_query": "kopi murah jogja",
+      "source_queries": [
+        "kopi murah jogja"
+      ]
+    },
+    {
+      "name": "Kopi Murah Jogja",
+      "maps_url": "https://www.google.com/maps/place/Kopi+Murah+Jogja/data=!4m7!3m6!1s0x2e7a57a02e91a5cd:0x96c57b9d0b8471eb!8m2!3d-7.8166047!4d110.3760478!16s%2Fg%2F11cpfm6byp!19sChIJzaWRLqBXei4R63GEC517xZY?authuser=0&hl=id&rclk=1",
+      "place_id": "0x2e7a57a02e91a5cd:0x96c57b9d0b8471eb",
+      "address": "Jl. Lowanu No.10 Tutup",
+      "lat": "-7.8166047",
+      "lng": "110.3760478",
+      "category": "Kedai Kopi",
+      "price_level": "",
+      "rating": "4.9",
+      "review_count": "",
+      "is_open": "open",
+      "closes_at": "",
+      "opens_at": "09.00",
+      "image_urls": [
+        "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHJUVw6NaweStEvNR2B20BwJOI_MqUpoVuDuGzGzVQfc0Nt9J9tSoJSEPJn5YVPdPcgE39ObVQgGGdfqGkEON3o2Q2HPPQi10Slwr3Vq7uFa4nP4idmqk6-fG1_l7Stk21_W3pI7g=w1200-h900-k-no",
+        "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH0v3WxBIWnDSZr-l1Ua3hjwU5Ys5kUMq2LZVbZ7sIMeK3Wq8rjZCxvU-c8T9IGu66bLPBfW5P4pZmXZa3MuGd3yW0tn5JReeLaBPEfi4LKjL7CL8OkQm6KfshqaYL6w0f_c0Haxw=w1200-h900-k-no",
+        "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHkqI1trJKeZxSLXApz__5gtzRjVg7VGiLzu4g5Je3JTVFIx1DOalryIRETPNasPgnQN30LfkAkpzd75-0KkDAGYC57fIbcMvskgmH0eFwbe-ZA4BciePxe6i-0BJY_KwUZlu0B=w1200-h900-k-no",
+        "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG2iDNGlXch8vm3IUZ0b2WgLKJnEoyx1bOfp_JKEcuN_7vf1dL1rjUaQkBo5gOquk0qV4H0R_ncyUQ5ty31Z89BwTg7iBROKheA_cDfuIwXog1ztz2SewHocJd1L_Bd1mbVNwXk=w1200-h900-k-no",
+        "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHXn6nHs7AbMPOZyM4mpUgo7ZJmg42xaBDmJYFJgj0sDTc29wRRlregZPojN1eF_hj4u8RqoxUudRjBSTqHS0W-mY6TnXRWFWDsI_Nufyi2eU_AbCbxD_5nIh2tp3zCz49eAL3x=w1200-h900-k-no",
+        "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF36zA8NKliP1SFlpiqPrgAT6oz7_IEeptTrnx3jz52EasM8aV31lfDKkJ_Iu95QhpEuOcLpbOakBwyYJOL1LOHK70lJeGUZfuH2D1SPpS2036rb_ururqEAHnaJkj2ZUfk_tv91A=w1200-h900-k-no",
+        "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE69sB15DIdW2HukjLr4feXTejVMrwhDouV5Ucb8K3g2Mai8vr3yIA6iMeOhRw9a8_VMB8K2Ne1r9rwv3jiHQtOZ6PDueY6w7P9jxA-kWG9LUuZ-w3QYl41eTyqOR_yGAiqKefbxrlf3Uu5=w1200-h900-k-no",
+        "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEaP6z6ceCzBUZ11jf27x81oNOnUPBHOLC0Q6evO3EH0nHhs04evGF6kQbP_tnSli4HlTpKNpHtGcB-myS06_aG-R32wAe0O9aCu6k2WJBFmaDOa6NxF-nrpgmhbNpYngYrI4cyVDQRKGw=w1200-h900-k-no",
+        "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGfjKR8XJMlrQBQSVXveQG_yhxlDBC2iCemkuY8jxv1TMGtbLdmtTkf1Fj03oQLisSioF8RaQd-EWWnD9NJyoL7Gs__u4y5o3xWGVFER_AJxxaf0ElzKpfa4l7xhlGceaBosvJF=w1200-h900-k-no",
+        "https://lh3.googleusercontent.com/gps-cs-s/APNQkAESkGW5t_iiktltFxz_YK5cT-rCaFIYtj3kfXTNAdl65YrrT8Zkdj0PcVN8eGiABzsw4zcofOwBD1KyCy4Z6PBzCqyxJ_1vQhY-5XxKd_A43oCHl_Qh760StRmktfUPd-YgD9g=w1200-h900-k-no"
+      ],
+      "text_preview": "Kopi Murah Jogja 4,9 Kedai Kopi ·  · Jl. Lowanu No.10 Tutup · Buka pukul 09.00",
+      "source_query": "kopi murah jogja",
+      "source_queries": [
+        "kopi murah jogja"
+      ]
+    }
+  ]
+}
