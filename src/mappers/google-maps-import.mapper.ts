@@ -1,6 +1,7 @@
 import type { AdminPlace, GoogleMapsScrapeCandidate, PlaceCategory } from "../types/domain";
 import { defaultRatings } from "../utils/rating";
 import { slugify } from "../utils/slugify";
+import { buildWfcRecommendationForGoogleMapsCandidate } from "../utils/wfc-recommendation";
 import { createEmptyPlace, normalizeAdminPlace } from "./place.mapper";
 
 export function toAdminPlaceFromGoogleMapsCandidate(
@@ -14,7 +15,7 @@ export function toAdminPlaceFromGoogleMapsCandidate(
   } = {},
 ): AdminPlace {
   const slug = slugify(candidate.name || `google-maps-place-${index + 1}`);
-  const imageUrls = candidate.image_urls.map(toLargeGoogleImageUrl);
+  const imageUrls = (candidate.image_urls ?? []).map(toLargeGoogleImageUrl);
   const firstImage = imageUrls[0] ?? "";
   const rating = normalizeRating(candidate.rating);
   const signalText = buildSignalText(
@@ -29,8 +30,9 @@ export function toAdminPlaceFromGoogleMapsCandidate(
   const featureHighlights = buildFeatureHighlights(category, firstImage, signalText, priceLevel, openingHours);
   const bestFor = buildBestFor(signalText, priceLevel);
   const hasWifiSignal = /wifi|wi-fi|internet|wfc|work.?from|remote|nugas|kerja|laptop|colokan|socket|stop kontak/i.test(signalText);
+  const adminNotes = options.adminNotes ?? buildAdminNotes();
 
-  return normalizeAdminPlace({
+  const place = normalizeAdminPlace({
     ...createEmptyPlace(),
     id: `gmaps-${slug}`,
     slug,
@@ -70,7 +72,7 @@ export function toAdminPlaceFromGoogleMapsCandidate(
     ],
     reviews: [],
     status: options.status ?? "draft",
-    adminNotes: options.adminNotes ?? "Imported dari Google Maps scrape. Lengkapi fasilitas WFC sebelum publish.",
+    adminNotes,
     sourceMentions: [
       {
         source: "Google Maps scrape",
@@ -83,6 +85,11 @@ export function toAdminPlaceFromGoogleMapsCandidate(
     freshnessStatus: "web-enriched",
     createdAt: now,
     updatedAt: now,
+  });
+
+  return normalizeAdminPlace({
+    ...place,
+    wfcRecommendation: buildWfcRecommendationForGoogleMapsCandidate(candidate, place, options.sourceQuery),
   });
 }
 
@@ -262,6 +269,13 @@ function calculateWebSignalScore(firstImage: string, hasWifiSignal: boolean, pri
   if (Number.isFinite(reviews) && reviews >= 100) score += 3;
 
   return score;
+}
+
+function buildAdminNotes(): string {
+  return [
+    "Imported dari Google Maps scrape. Lengkapi fasilitas WFC sebelum publish.",
+    "Checklist: cek wifi stabil, jumlah colokan, jam operasional, harga minimum, noise level, dan foto terbaru.",
+  ].join(" ");
 }
 
 function categoryLabel(category: PlaceCategory): string {

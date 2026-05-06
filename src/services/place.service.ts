@@ -1,10 +1,11 @@
 import { createEmptyPlace, isPublicPlace, normalizeAdminPlace, toCafeDetail, toCafeListItem } from "../mappers/place.mapper";
 import { readPlaces, writePlaces } from "../repositories/place.repository";
-import type { AdminPlace, CafeListItem, ReviewItem } from "../types/domain";
+import type { AdminPlace, CafeListItem, CafeSort, ReviewItem } from "../types/domain";
 import { HttpError } from "../utils/http-error";
 import { getPagination, paginateItems } from "../utils/pagination";
 import { getQueryString } from "../utils/query";
 import { slugify } from "../utils/slugify";
+import { matchesUseCase } from "../utils/wfc-recommendation";
 
 export async function getPublicCafes(query: Record<string, unknown>): Promise<{
   items: CafeListItem[];
@@ -15,7 +16,10 @@ export async function getPublicCafes(query: Record<string, unknown>): Promise<{
   availableAreas: string[];
 }> {
   const publicPlaces = (await readPlaces()).filter(isPublicPlace).map(toCafeDetail);
-  const filteredItems = publicPlaces.map(toCafeListItem).filter((cafe) => matchesCafeFilters(cafe, query));
+  const filteredItems = sortPublicPlaces(
+    publicPlaces.filter((place) => matchesCafeFilters(place, query)),
+    getCafeSort(query),
+  ).map(toCafeListItem);
   const pagination = getPagination(query);
   const { items, meta } = paginateItems(filteredItems, pagination.page, pagination.limit);
 
@@ -98,11 +102,20 @@ export async function archiveAdminPlace(id: string): Promise<AdminPlace> {
   return updateAdminPlace(id, { status: "archived" });
 }
 
-function matchesCafeFilters(cafe: CafeListItem, query: Record<string, unknown>): boolean {
+function matchesCafeFilters(cafe: AdminPlace, query: Record<string, unknown>): boolean {
   const q = getQueryString(query, "q").trim().toLowerCase();
 
   if (q) {
-    const haystack = [cafe.name, cafe.tagline, cafe.area, cafe.address, ...cafe.bestFor, ...cafe.featureHighlights]
+    const haystack = [
+      cafe.name,
+      cafe.tagline,
+      cafe.area,
+      cafe.address,
+      ...cafe.bestFor,
+      ...cafe.featureHighlights,
+      ...cafe.wfcRecommendation.badges,
+      ...cafe.wfcRecommendation.reasons,
+    ]
       .join(" ")
       .toLowerCase();
 
@@ -114,8 +127,39 @@ function matchesCafeFilters(cafe: CafeListItem, query: Record<string, unknown>):
   if (getQueryString(query, "hasSockets") === "true" && !cafe.amenities.hasSockets) return false;
   if (getQueryString(query, "hasMusholla") === "true" && !cafe.amenities.hasMusholla) return false;
   if (getQueryString(query, "hasParking") === "true" && !cafe.amenities.hasParking) return false;
+  if (getQueryString(query, "useCase") && !matchesUseCase(cafe, getQueryString(query, "useCase"))) return false;
 
   return true;
+}
+
+export function getCafeSort(query: Record<string, unknown>): CafeSort {
+  const sort = getQueryString(query, "sort");
+  if (sort === "recommended") return sort;
+  if (sort === "rating" || sort === "reviews" || sort === "newest") return sort;
+  return "rating";
+}
+
+function sortPublicPlaces(places: AdminPlace[], sort: CafeSort): AdminPlace[] {
+  return [...places].sort((a, b) => {
+    if (sort === "rating") return averagePlaceRating(b) - averagePlaceRating(a) || compareRecommendation(a, b);
+    if (sort === "reviews") return b.reviews.length - a.reviews.length || compareRecommendation(a, b);
+    if (sort === "newest") return Date.parse(b.updatedAt) - Date.parse(a.updatedAt) || compareRecommendation(a, b);
+    return compareRecommendation(a, b);
+  });
+}
+
+function compareRecommendation(a: AdminPlace, b: AdminPlace): number {
+  return (
+    b.wfcRecommendation.score - a.wfcRecommendation.score ||
+    (b.webSignalScore ?? 0) - (a.webSignalScore ?? 0) ||
+    averagePlaceRating(b) - averagePlaceRating(a) ||
+    a.name.localeCompare(b.name, "id")
+  );
+}
+
+function averagePlaceRating(place: AdminPlace): number {
+  const values = Object.values(place.ratingBreakdown);
+  return values.reduce((sum, value) => sum + value, 0) / values.length;
 }
 
 function matchesAdminFilters(place: AdminPlace, query: Record<string, unknown>): boolean {

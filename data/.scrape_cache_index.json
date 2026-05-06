@@ -64,5 +64,65 @@
     "limit": 20,
     "file": "scrape_421f1d0a2e08.json",
     "scraped_at": "2026-04-26T17:21:36.638715+00:00"
+  },
+  "23b7d8bb508f19b5ed9037d52190e02fe8fd0bf2870b33e6da019b9e0bfb757b": {
+    "query": "cafe wifi kencang jogja",
+    "limit": 30,
+    "file": "scrape_23b7d8bb508f.json",
+    "scraped_at": "2026-05-04T15:35:26.425479+00:00"
+  },
+  "ef082fbd077f1f93330993697cd400bfb033b9829b93df8765ee16a4c804b25c": {
+    "query": "cafe murah jogja",
+    "limit": 30,
+    "file": "scrape_ef082fbd077f.json",
+    "scraped_at": "2026-05-04T15:37:37.893758+00:00"
+  },
+  "654eda50a9404fd04a6121623758d61f7d5521f6e85041eb5ae6a34d53088f76": {
+    "query": "cafe colokan jogja",
+    "limit": 30,
+    "file": "scrape_654eda50a940.json",
+    "scraped_at": "2026-05-04T15:38:02.475798+00:00"
+  },
+  "217268635de2d27eec5b53fd81bb42dca10b85d254362c90a43038253c63bcee": {
+    "query": "cafe 24 jam jogja",
+    "limit": 30,
+    "file": "scrape_217268635de2.json",
+    "scraped_at": "2026-05-04T15:38:52.672681+00:00"
+  },
+  "61573bd687803786df45a630e96310a1369998b6c06b59342a9e7af90458b728": {
+    "query": "coworking space jogja",
+    "limit": 30,
+    "file": "scrape_61573bd68780.json",
+    "scraped_at": "2026-05-04T15:40:41.610338+00:00"
+  },
+  "8fc9c8a888ea5c709db0d93eb2547622ab34d7d6dcf91c676cc81ac944e01d1c": {
+    "query": "cafe outdoor jogja",
+    "limit": 30,
+    "file": "scrape_8fc9c8a888ea.json",
+    "scraped_at": "2026-05-04T15:42:12.405486+00:00"
+  },
+  "82603b9985cb5e1be8e37fddbcc9a3dd46c3c062c2a48b0daa0d4b110bb2aa7c": {
+    "query": "cafe tenang untuk kerja jogja",
+    "limit": 30,
+    "file": "scrape_82603b9985cb.json",
+    "scraped_at": "2026-05-04T15:43:49.146002+00:00"
+  },
+  "bdeaa7152a414f95c1d32e166a91d6bd34e91da493a293fc35f8b7fc814a96b4": {
+    "query": "cafe dekat kampus jogja",
+    "limit": 30,
+    "file": "scrape_bdeaa7152a41.json",
+    "scraped_at": "2026-05-04T15:45:27.163114+00:00"
+  },
+  "19d84747ca4e90a7d1ddc86d3bd9ad544801b2e7d77260b81c521b9863b76801": {
+    "query": "cafe meeting jogja",
+    "limit": 30,
+    "file": "scrape_19d84747ca4e.json",
+    "scraped_at": "2026-05-04T15:47:04.065598+00:00"
+  },
+  "e124fbb3a199abcb24b9d9d8dbe42a64553d7dfd97c2763c9808689c9b67455e": {
+    "query": "cafe laptop friendly jogja",
+    "limit": 30,
+    "file": "scrape_e124fbb3a199.json",
+    "scraped_at": "2026-05-04T15:48:06.407969+00:00"
   }
 }

@@ -31,7 +31,9 @@ test("maps a Google Maps scrape candidate into a draft admin place", () => {
   assert.equal(place.address, "Jl. Perumnas No.9");
   assert.equal(place.category, "cafe");
   assert.equal(place.ratingBreakdown.food, 4.8);
-  assert.equal(place.adminNotes, "Imported dari Google Maps scrape. Lengkapi fasilitas WFC sebelum publish.");
+  assert.equal(place.adminNotes.includes("Checklist: cek wifi stabil"), true);
+  assert.equal(place.wfcRecommendation.badges.includes("Punya foto asli"), true);
+  assert.equal(place.wfcRecommendation.score > 0, true);
 });
 
 test("enriches Google Maps candidates for frontend filters", () => {
@@ -61,6 +63,27 @@ test("enriches Google Maps candidates for frontend filters", () => {
   assert.equal(place.featureHighlights.includes("Wifi kencang"), true);
   assert.equal(place.featureHighlights.includes("Budget murah"), true);
   assert.equal(place.featureHighlights.includes("Buka 24 jam"), true);
+  assert.equal(place.wfcRecommendation.badges.includes("Wifi signal"), true);
+  assert.equal(place.wfcRecommendation.badges.includes("Budget murah"), true);
+  assert.equal(place.wfcRecommendation.badges.includes("Banyak colokan"), true);
+  assert.equal(place.wfcRecommendation.tier === "excellent" || place.wfcRecommendation.tier === "good", true);
+});
+
+test("sets lower recommendation confidence when candidate lacks image and rating signals", () => {
+  const place = toAdminPlaceFromGoogleMapsCandidate(
+    {
+      name: "Tempat Perlu Cek",
+      maps_url: "https://www.google.com/maps/place/Tempat+Perlu+Cek",
+      rating: "",
+      image_urls: [],
+      text_preview: "Tempat Perlu Cek Kafe",
+    },
+    0,
+    "2026-04-26T14:30:00.000Z",
+  );
+
+  assert.equal(place.wfcRecommendation.confidence, "low");
+  assert.equal(place.wfcRecommendation.badges.includes("Punya foto asli"), false);
 });
 
 test("maps Google Street View thumbnails into larger image URLs", () => {

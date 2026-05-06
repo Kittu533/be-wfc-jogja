@@ -3,6 +3,10 @@ export type PriceLevel = "murah" | "menengah" | "premium";
 export type ImageStatus = "missing" | "fallback" | "scraped" | "uploaded";
 export type PlaceStatus = "draft" | "published" | "archived";
 export type FreshnessStatus = "osm-only" | "web-enriched" | "verified";
+export type WfcRecommendationTier = "excellent" | "good" | "okay" | "needs_review";
+export type WfcRecommendationConfidence = "high" | "medium" | "low";
+export type CafeSort = "recommended" | "rating" | "reviews" | "newest";
+export type CafeUseCase = "wifi" | "budget" | "sockets" | "night" | "meeting" | "coworking";
 
 export interface Coordinates {
   latitude: number;
@@ -51,6 +55,14 @@ export interface SourceMention {
   publishedAt?: string;
 }
 
+export interface WfcRecommendation {
+  score: number;
+  tier: WfcRecommendationTier;
+  badges: string[];
+  reasons: string[];
+  confidence: WfcRecommendationConfidence;
+}
+
 export interface AdminPlace {
   id: string;
   slug: string;
@@ -82,6 +94,7 @@ export interface AdminPlace {
   adminNotes: string;
   sourceMentions: SourceMention[];
   webSignalScore: number;
+  wfcRecommendation: WfcRecommendation;
   freshnessStatus: FreshnessStatus;
   createdAt: string;
   updatedAt: string;
@@ -102,6 +115,7 @@ export interface CafeListItem {
   featureHighlights: string[];
   bestFor: string[];
   amenities: PlaceAmenities;
+  wfcRecommendation: WfcRecommendation;
 }
 
 export interface CuratedList {

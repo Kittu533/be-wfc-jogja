@@ -7,6 +7,7 @@ import type {
   SeedCandidate,
 } from "../types/domain";
 import { averageRating, defaultRatings } from "../utils/rating";
+import { defaultWfcRecommendation, normalizeWfcRecommendation } from "../utils/wfc-recommendation";
 
 export function toAdminPlace(candidate: SeedCandidate, index: number): AdminPlace {
   const now = "2026-04-26T09:00:00+07:00";
@@ -56,6 +57,7 @@ export function toAdminPlace(candidate: SeedCandidate, index: number): AdminPlac
     adminNotes: imageStatus === "scraped" ? "Auto-published karena punya real image." : "Lengkapi cover image asli sebelum publish.",
     sourceMentions: candidate.sourceMentions ?? [],
     webSignalScore: candidate.webSignalScore ?? 0,
+    wfcRecommendation: defaultWfcRecommendation(),
     freshnessStatus: candidate.freshnessStatus ?? "osm-only",
     createdAt: now,
     updatedAt: now,
@@ -82,6 +84,7 @@ export function normalizeAdminPlace(place: Partial<AdminPlace>): AdminPlace {
     reviews: Array.isArray(place.reviews) ? place.reviews : [],
     sourceMentions: Array.isArray(place.sourceMentions) ? place.sourceMentions : [],
     webSignalScore: Number(place.webSignalScore ?? 0),
+    wfcRecommendation: normalizeWfcRecommendation(place.wfcRecommendation),
   };
 }
 
@@ -125,6 +128,7 @@ export function createEmptyPlace(): AdminPlace {
     adminNotes: "",
     sourceMentions: [],
     webSignalScore: 0,
+    wfcRecommendation: defaultWfcRecommendation(),
     freshnessStatus: "osm-only",
     createdAt: now,
     updatedAt: now,
@@ -160,6 +164,7 @@ export function toCafeListItem(cafe: AdminPlace): CafeListItem {
     featureHighlights: cafe.featureHighlights,
     bestFor: cafe.bestFor,
     amenities: cafe.amenities,
+    wfcRecommendation: cafe.wfcRecommendation,
   };
 }
 
